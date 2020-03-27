@@ -19,6 +19,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AddProductComponent } from './containers/add-product/add-product.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 // import { DemoMaterialModule } from './material-module';
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     SignupComponent,
     HomeComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSnackBarModule,
     FormsModule,
     MatProgressSpinnerModule,
+    MatCheckboxModule,
+    MatSelectModule,
     // DemoMaterialModule
   ],
   providers: [],
