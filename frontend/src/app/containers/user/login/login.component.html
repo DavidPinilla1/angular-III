@@ -1,19 +1,32 @@
-<form (submit)="login($event)">
-  <h2>Login</h2>
-  <mat-form-field>
-    <mat-label>Username</mat-label>
-    <input matInput name="username">
-  </mat-form-field>
+<div class="loginContainer">
 
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input matInput type="password" name="password">
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Log in</button>
+  <form (submit)="login($event)" *ngIf="!loading">
+    <h2>Login</h2>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput name="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Log in</button>
+  </form>
+
   <div class="message" *ngIf="message">
     {{message}}
-</div>
-<div color="warn" *ngIf="errorMsg">
+  </div>
+  <div class="errorMsg" *ngIf="errorMsg">
     {{errorMsg}}
+  </div>
+  <!-- <mat-spinner *ngIf="loading"></mat-spinner> -->
+  <div class="spinner-box" *ngIf="loading">
+    <div class="leo-border-1">
+      <div class="leo-core-1"></div>
+    </div>
+    <div class="leo-border-2">
+      <div class="leo-core-2"></div>
+    </div>
+  </div>
 </div>
-</form>

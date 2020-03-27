@@ -6,29 +6,31 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent  {
-  public message:string;
-  public errorMsg:string;
-  constructor(public userService:UserService) { }
-  login(event){
+export class LoginComponent {
+  public message: string;
+  public errorMsg: string;
+  public loading:boolean=false;
+  constructor(public userService: UserService) { }
+  login(event) {
     event.preventDefault();
     const form = event.target;
     const user = {
-      username:form.username.value,
-      password:form.password.value,
+      username: form.username.value,
+      password: form.password.value,
     }
+    this.loading=true;
     this.userService.login(user)
-    .subscribe(
-      res=>{
-        this.message=res.message;
-        setTimeout(() => {
-          this.message="";
-        }, 2500);
-      },
-      err=>{
-        console.error(err);
-        this.errorMsg=err.error.message
-      }
-    )
+      .subscribe(
+        res => {
+          this.message = res.message;
+          this.loading=false;
+          setTimeout(() => this.message = "", 2500);
+        },
+        err => {
+          this.errorMsg = err.error.message
+          this.loading=false;
+          setTimeout(() => this.errorMsg = "", 2500);
+        }
+      )
   }
 }

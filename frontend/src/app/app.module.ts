@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // import { DemoMaterialModule } from './material-module';
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatSnackBarModule,
     FormsModule,
+    MatProgressSpinnerModule,
     // DemoMaterialModule
   ],
   providers: [],
