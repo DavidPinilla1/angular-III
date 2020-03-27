@@ -15,8 +15,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 // import { DemoMaterialModule } from './material-module';
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     HttpClientModule,
     MatSnackBarModule,
+    FormsModule,
     // DemoMaterialModule
   ],
   providers: [],
